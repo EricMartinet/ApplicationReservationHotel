@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application réservation d'hôtel</title>
+</head>
+<body>
+    <form action="reservation.html" method="post"> 
+        <!--// attention method='get' pas sécuritaire 
+        // pour un formulaire
+        // dans action indiquer la page du serveur qui traitera les données 
+        // reservation.php ou .js ... -->
+        <!-- Sous section avec fieldset-->
+        <fieldset>
+            <legend> Informations personnelles </legend>
+            <!-- for contient le même id que celui du input-->
+            <label for="name">Nom d'utilisateur</label>
+            <input type="text" id="name" required 
+                    autofocus 
+                    placeholder="votre nom"
+                    title="Entrez plus de 3 lettres"
+                    pattern="[a-zA-Z]{3,}">
+            <label for="email">Courriel</label>
+            <input type="text" id="email" required 
+                    placeholder="votre nom"
+                    title="Entrez votre email"
+                    pattern="[a-zA-Z]{3,}@[a-zA-Z]{3,}[.][a-zA-Z]{2,}">
+            <label for="numTel">Numéro de téléphone</label>
+            <input type="text" id="numTel" required 
+                            placeholder="votre nom"
+                            title="Entrez votre numéro de téléphone
+                            au format ### ### ####"
+                            pattern="[0-9]{3} [0-9]{3} [0-9]{4}">
+            <select name="pays" required>
+                <option value=""></option>
+                <option value="CA">Canada</option>
+                <option value="US">États-Unis</option>
+                <option value="FR">France</option>
+                <option value="TN">Tunisie</option>
+            </select>
+        </fieldset> 
+        <fieldset>
+            <legend>Détail de réservation :</legend>
+            <label for="date">Date de réservation</label>
+            <input type="date" id="date" min="2022-01-01" max="2022-08-01">
+            <label for="NbVisiteurs">Nombre de visiteurs</label>
+            <input type="number" id="NbVisiteurs" min="1" max="5" name="NbVisiteurs">
+        <p>Souhaitez vous commander des repas ?</p>
+        <label for="ouiRepas">Oui</label>
+        <input type="radio" id="ouiRepas" name="repas" checked>
+        <label for="epas">Non</label>
+        <input type="radio" id="nonRepas" name="repas">
+        <br>
+        <label for="terrasse">Voulez-vous une terrasse?</label>
+        <input type="checkbox" id="terrasse" name="terrasse" checked>
+        
+        <!--input type="submit" ou bien avec image-->
+
+        <input type="image" src="submitButton.jpg" alt="bouton Submit">
+        </fieldset>      
+    </form>
+</body>
+</html>
